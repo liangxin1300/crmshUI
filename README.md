@@ -34,7 +34,6 @@ It looks clear and simple that just leave the most frequently used.
 |<del>site</del>|GEO clustering site support|crm>site|crm>cluster>geo>ticket|<ul><li>should better put into "cluster>geo" level</li></ul>|
 |<del>verify</del>|Verify cluster status|crm>verify|crm>tools>verify|<ul><li>should better put into "tools" level</li></ul>|
 |**tools**|Cluster tools|None|crm>tools|<ul><li>include useful but less used tools, like "report","history","verify","health" and "test"</li><li>while "test" is related to the FATE#321073</li></ul>|
-|<pre>    </pre>|<pre>                   </pre>|||<pre>                              </pre>|
 ---
 ## cluster level
 <pre>
