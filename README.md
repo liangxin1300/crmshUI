@@ -89,9 +89,8 @@ cluster
 ## configure level
 <pre>
 configure
-    acl
-    alert
-    shadow		<b>Cib shadow management</b>
+    acl_target		<b>Define target access rights</b>
+    alert		<b>Event-driven alerts</b>
     cibstatus		<b>Cib status management and editing</b>
     commit
     corosync		<b>Corosync management</b>
@@ -100,30 +99,91 @@ configure
     fencing_topology
     node		<b>Define a cluster node</b>
     resource		<b>Define a cluster resource</b>
+    constraints		<b>Define resource constraints</b>
+    property
+    shadow		<b>Cib shadow management</b>
+</pre>
+<pre>
+configure
+    corosync		<b>Corosync management</b>
+        diff
+	edit
+	get
+	log
+	pull
+	push
+	reload
+	set
+	show
+	status
+
+</pre>
+<pre>
+configure
+    resource
         primitive	<b>primitive resource</b>
-        template	<b>resource template</b>
         group		<b>group resource</b>
         clone		<b>clone resource</b>
         master		<b>master resource</b>
         bundle		<b>bundle resource</b>
+        rsc_template	<b>resource template</b>
         rsc_defaults	<b>Set resource meta defaults</b>
         op_defaults	<b>Set resource operations defaults</b>
         agent		<b>Resource Agents lists and documentation</b>
+</pre>
+<pre>
+configure
     constraints		<b>Define resource constraints</b>
         location
         colocation
         order
         ticket
-    property
 </pre>
-#### Diff table in configure level
-| name | original | plan | explain |
-|----------|----------|---------|---------|
-|**shadow**|crm>configure>cib|crm>configure>shadow|<ul><li>"shadow" is more specific</li><li>"cibshadow" is also fine</li></ul>|
-|**corosync**|crm>corosync|crm>configure>corosync|<ul><li>seems less used, not suitable in root level</li></ul>|
-|**resource**|None|crm>configure>resource|<ul><li>lots of resource types, should be classified</li></ul>|
-|**agent**|crm>configure>ra|crm>configure>resource>agent|<ul><li>more specific against "ra"</li><li>should in resource level</li></ul>|
-|**constraints**|None|crm>configure>constraints|<ul><li>should better be classified</li></ul>|
+#### Diff table(1) in configure level
+|name|description|original|plan|explain|
+|--|--|--|--|--|
+|**corosync**|corosync management|crm>corosync|crm>configure>corosync|<ul><li>seems less used, not suitable in root level</li></ul>|
+|<del>add-node</del>|Add a corosync node|crm>corosync>add-node|None|<ul><li>Confuse with cluster add? Keep one?</li></ul>|
+|<del>del-node</del>|Remove a corosync node|crm>corosync>del-node|None|<ul><li>Confuse with cluster remove? Keep one?</li></ul>|
+|**diff**|Diffs the corosync configuration|crm>corosync>diff|crm>configure>corosync>diff|<ul><li>move to new corosync sublevel</li></ul>|
+|**edit**|Edit the corosync configuration|crm>corosync>edit|crm>configure>corosync>edit|<ul><li>move to new corosync sublevel</li></ul>|
+|**get**|Get a corosync configuration value|crm>corosync>get|crm>configure>corosync>get|<ul><li>move to new corosync sublevel</li></ul>|
+|**log**|Show the corosync log file|crm>corosync>log|crm>configure>corosync>log|<ul><li>move to new corosync sublevel</li></ul>|
+|**pull**|Pulls the corosync configuration|crm>corosync>pull|crm>configure>corosync>pull|<ul><li>move to new corosync sublevel</li></ul>|
+|**push**|Push the corosync configuration|crm>corosync>push|crm>configure>corosync>push|<ul><li>move to new corosync sublevel</li></ul>|
+|**reload**|Reload the corosync configuration|crm>corosync>reload|crm>configure>corosync>reload|<ul><li>move to new corosync sublevel</li></ul>|
+|**set**|Set a corosync configuration value|crm>corosync>set|crm>configure>corosync>set|<ul><li>move to new corosync sublevel</li></ul>|
+|**show**|Display the corosync configuration|crm>corosync>diff|crm>configure>corosync>show|<ul><li>move to new corosync sublevel</li></ul>|
+|**status**|Display the corosync status|crm>corosync>diff|crm>configure>corosync>status|<ul><li>move to new corosync sublevel</li></ul>|
+||<pre>               </pre>|<pre>                  </pre>||<pre>                            </pre>|
+#### Diff table(2) in configure level
+|name|description|original|plan|explain |
+|--|--|--|--|--|
+||||||
+|**resource**|Define a cluster resource|None|crm>configure>resource|<ul><li>lots of resource types, should be classified</li></ul>|
+|**primitive**|Define a primitive resource|crm>configure>primitive|crm>configure>resource>primitive|<ul><li>move to the configure resource sublevel</li></ul>|
+|**group**|Define a group|crm>configure>group|crm>configure>resource>group|<ul><li>move to the configure resource sublevel</li></ul>|
+|**clone**|Define a clone|crm>configure>clone|crm>configure>resource>clone|<ul><li>move to the configure resource sublevel</li></ul>|
+|**master**|Define a master resource|crm>configure>master|crm>configure>resource>master|<ul><li>move to the configure resource sublevel</li></ul>|
+|**bundle**|Define a container resource|crm>configure>bundle|crm>configure>resource>bundle|<ul><li>move to the configure resource sublevel</li></ul>|
+|**rsc_template**|Define a resource template|crm>configure>rsc_template|crm>configure>resource>rsc_template|<ul><li>move to the configure resource sublevel</li></ul>|
+|**rsc_defaults**|Set resource meta defaults|crm>configure>rsc_defaults|crm>configure>resource>rsc_defaults|<ul><li>move to the configure resource sublevel</li></ul>|
+|**op_defaults**|Set resource operations defaults|crm>configure>op_defaults|crm>configure>resource>op_defaults|<ul><li>move to the configure resource sublevel</li></ul>|
+|**agent**|Resource Agents documentation|crm>configure>ra|crm>configure>resource>agent|<ul><li>more specific against "ra"</li><li>should in resource sublevel</li></ul>|
+||<pre>             </pre>|||<pre>                          </pre>|
+#### Diff table(3) in configure level
+|name|description|original|plan|explain |
+|--|--|--|--|--|
+|**constraints**|Define resource constraints|None|crm>configure>constraints|<ul><li>should better be classified</li></ul>|
+|**location**|A location preference|crm>configure>location|crm>configure>constraints>location|<ul><li>move to the configure constraints sublevel</li></ul>|
+|**colocation**|Colocate resources|crm>configure>colocation|crm>configure>constraints>colocation|<ul><li>move to the configure constraints sublevel</li></ul>|
+|**order**|Order resources|crm>configure>order|crm>configure>constraints>order|<ul><li>move to the configure constraints sublevel</li></ul>|
+|**rsc_ticket**|Resources ticket dependency|crm>configure>rsc_ticket|crm>configure>constraints>rsc_ticket|<ul><li>move to the configure constraints sublevel</li></ul>|
+||<pre>           </pre>|||<pre>                   </pre>|
+#### Diff table(4) in configure level
+|name|description|original|plan|explain |
+|--|--|--|--|--|
+|**shadow**|Cib shadow management|crm>configure>cib|crm>configure>shadow|<ul><li>"shadow" is more specific</li><li>"cibshadow" is also fine</li></ul>|
 ---
 ## node level
 <pre>
