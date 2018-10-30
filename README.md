@@ -2,7 +2,7 @@
 Crmsh is a full function command-line interface for HA cluster management.<br>
 From my opinion, some sublevels/subcommands need to change or improve,<br>
 to make the command-line UI more simple and more easier to use.<br>
-Certainly I want to do these while keeping original sublevels/subcommands compatiable.<br>
+Certainly I want to do these while keeping original sublevels/subcommands **compatiable**.<br>
 But we will not provide auto completion for the original syntax.<br><br>
 All of navigate/help subcommands like "cd"/"help"/"ls"/"quit"/"up" will not list here.<br>
 Although I suggest dropping the "cd" and "ls" subcommands when at interactive mode,<br>
