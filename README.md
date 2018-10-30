@@ -103,6 +103,7 @@ configure
     property
     shadow		<b>Cib shadow management</b>
 </pre>
+#### corosync sublevel
 <pre>
 configure
     corosync		<b>Corosync management</b>
@@ -118,6 +119,7 @@ configure
 	status
 
 </pre>
+#### resource sublevel
 <pre>
 configure
     resource
@@ -131,6 +133,7 @@ configure
         op_defaults	<b>Set resource operations defaults</b>
         agent		<b>Resource Agents lists and documentation</b>
 </pre>
+#### constraints sublevel
 <pre>
 configure
     constraints		<b>Define resource constraints</b>
