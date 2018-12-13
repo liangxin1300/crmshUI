@@ -89,7 +89,7 @@ cluster
 ## configure level
 <pre>
 configure
-    acl_target		<b>Define target access rights</b>
+    acl		   	<b>Define target access rights</b>
     alert		<b>Event-driven alerts</b>
     cibstatus		<b>Cib status management and editing</b>
     commit
@@ -103,6 +103,10 @@ configure
     property
     shadow		<b>Cib shadow management</b>
 </pre>
+#### Diff table(1) in configure level
+|name|description|original|plan|explain|
+|--|--|--|--|--|
+|**acl**|Define target access rights|crm>configure>acl__target|
 #### corosync sublevel
 <pre>
 configure
