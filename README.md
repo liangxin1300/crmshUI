@@ -235,8 +235,12 @@ node
     utilization         <b>Manage utilization attributes</b>
 </pre>
 #### Diff table in node level
-| name | original | plan | explain |
-|----------|----------|---------|---------|
+|name|description|original|plan|explain|
+|--|--|--|--|--|
+|<del>online</del>|Set node online|node>online|node>standby off|<ul><li>as an option of standby</li></ul>|
+|<del>ready</del>|Put node into ready mode|node>ready|node>maintenance off|<ul><li>as an option of maintenance</li></ul>|
+|<del>server</del>|Show node hostname or server address|node>server|None|<ul><li>rarely used?</li></ul>|
+|<del>status</del>|Show nodes' status as XML|node>status|None|<ul><li>overlaped with node>show command</li></ul>|
 ---
 ## resource level
 <pre>
