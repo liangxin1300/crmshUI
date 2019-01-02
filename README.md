@@ -220,7 +220,19 @@ configure
 ## node level
 <pre>
 node
-    status
+    attribute		<b>Manage attributes</b>
+    clearstate		<b>Clear node state</b>
+    delete		<b>Delete node</b>
+    fence		<b>Fence node</b>
+    maintenance		<b>Put node into maintenance mode</b>
+        on
+        off 
+    show		<b>Show node</b>
+    standby             <b>Put node into standby</b>
+        on
+        off 
+    status-attr         <b>Manage status attributes</b>
+    utilization         <b>Manage utilization attributes</b>
 </pre>
 #### Diff table in node level
 | name | original | plan | explain |
