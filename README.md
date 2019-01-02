@@ -4,6 +4,8 @@ From my opinion, some sublevels/subcommands need to change or improve,<br>
 to make the command-line UI more simple and more easier to use.<br>
 Certainly I want to do these while keeping original sublevels/subcommands **compatiable**.<br>
 But we will not provide auto completion for the original syntax.<br><br>
+In this RFC, I have deleted many subcommands, in some level, more than 50% subcommands have been deleted.<br>
+We should review and disscus, whether it worth or make sense to pull some of them back<br><br>
 All of navigate/help subcommands like "cd"/"help"/"ls"/"quit"/"up" will not list here.
 ## root level
 <pre>
