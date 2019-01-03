@@ -246,17 +246,21 @@ node
 <pre>
 resource
     ban			<b>Ban a resource from a node</b>
-    classify
+        on
+        off
     cleanup		<b>Cleanup resource status</b>
-    clear		<b>Clear any relocation constraint</b>
     constraints		<b>Show constraints affecting a resource</b>
     demote		<b>Demote a master resource</b>
     failcount		<b>Manage failcounts</b>
     locate		<b>Show the location of resource</b>
     maintenance		<b>Enable/disable pre-resource maintenance mode</b>
     manage		<b>Put a resource into managed mode</b>
+        on
+        off
     meta		<b>Manage a meta attribute</b>
     move		<b>Move a resource to another node</b>
+        on
+        off
     operations		<b>Show active resource operations</b>
     param		<b>Manage a parameter of a resource</b>
     promote		<b>Promote a master resource</b>
@@ -268,13 +272,16 @@ resource
     status		<b>Show status of resources</b>
     stop		<b>Stop resources</b>
     trace		<b>Start RA tracing</b>
-    unmanage            <b>Put a resource into unmanage mode</b>
-    untrace		<b>Stop RA tracing</b>
+        on
+        off
     utilization		<b>Manage a utilization attribute</b>
 </pre>
 #### Diff table in resource level
-| name | original | plan | explain |
-|----------|----------|---------|---------|
+|name|description|original|plan|explain|
+|--|--|--|--|--|
+|<del>clear</del>|Clear any relocation constraint|resource>clear|None|<ul><li>integrated in move and ban as "off" option</li></ul>|
+|<del>unmanage</del>|Put a resource into unmanaged mode|resource>unmanage|None|<ul><li>integrated in manage as "off" option</li></ul>|
+|<del>untrace</del>|Stop RA tracing|resource>untrace|None|<ul><li>integrated in trace as "off" option</li></ul>|
 ---
 ## tools level
 ```
