@@ -282,14 +282,3 @@ resource
 |<del>clear</del>|Clear any relocation constraint|resource>clear|None|<ul><li>integrated in move and ban as "off" option</li></ul>|
 |<del>unmanage</del>|Put a resource into unmanaged mode|resource>unmanage|None|<ul><li>integrated in manage as "off" option</li></ul>|
 |<del>untrace</del>|Stop RA tracing|resource>untrace|None|<ul><li>integrated in trace as "off" option</li></ul>|
----
-## tools level
-```
-tools
-    report
-    history
-    test
-```
-#### Diff table in tools level
-| name | original | plan | explain |
-|----------|----------|---------|---------|
